@@ -1,601 +1,346 @@
-<div align="center">
+# Gemini Sidecar Studio
+
+> **A starting point for building, experimenting, modifying, and creating something better.**
+
+Gemini Sidecar Studio, Gemini Web'i bir masaüstü geliştirme ortamıyla birleştirmeyi amaçlayan deneysel bir **Project Architect / Code Intelligence** aracıdır.
+
+Bu proje yalnızca ortaya çıkmış son bir ürün olarak değil, **üzerine yeni şeyler inşa edilebilecek bir başlangıç noktası** olarak düşünülmüştür.
+
+Projenin amacı mükemmel veya tamamlanmış bir IDE sunmak değil; geliştiricilerin mevcut yapıyı inceleyerek kendi fikirlerini ekleyebileceği, sistemi değiştirebileceği ve çok daha ileri taşıyabileceği bir temel oluşturmaktır.
+
+---
+
+## 🚀 Project Philosophy
+
+**Bu proje kapalı bir ürün olarak tasarlanmadı.**
+
+Kodun nasıl çalıştığını inceleyebilir, istediğiniz bölümü değiştirebilir, kendi özelliklerinizi ekleyebilir veya projeyi tamamen farklı bir yöne taşıyabilirsiniz.
+
+Bu repository'yi bir **başlangıç noktası** olarak kullanabilirsiniz.
+
+Örneğin:
+
+* Fork oluşturabilirsiniz.
+* Kodu değiştirebilirsiniz.
+* Yeni özellikler ekleyebilirsiniz.
+* Mevcut sistemleri tamamen yeniden yazabilirsiniz.
+* Kendi uygulamanızın temelini oluşturabilirsiniz.
+* Kodun fikirlerinden ve mimarisinden yararlanabilirsiniz.
+* Eğitim ve deney amaçlı kullanabilirsiniz.
+* Kendi araçlarınızla birleştirebilirsiniz.
+* Projeyi bambaşka bir ürüne dönüştürebilirsiniz.
+* Başka geliştiricilerle birlikte geliştirebilirsiniz.
+
+**Kısacası: Bu projeyi olduğu gibi kullanmak zorunda değilsiniz. Onu değiştirmek için buradasınız.**
+
+---
+
+## 🧠 What is Gemini Sidecar Studio?
+
+Gemini Sidecar Studio, Gemini Web üzerinde gerçekleştirilen geliştirme süreçlerini masaüstü tarafındaki yardımcı araçlarla birleştiren bir deneysel çalışma alanıdır.
+
+Proje temel olarak birkaç farklı bileşenin birlikte çalışması üzerine kuruludur:
 
 ```text
-██╗   ██╗████████╗    ██╗   ██╗ ██████╗  ██████╗ █████╗ ██████╗
-╚██╗ ██╔╝╚══██╔══╝    ██║   ██║██╔═══██╗██╔════╝██╔══██╗██╔══██╗
- ╚████╔╝    ██║       ██║   ██║██║   ██║██║    ███████║██████╔╝
-  ╚██╔╝     ██║       ╚██╗ ██╔╝██║   ██║██║    ██╔══██║██╔══██╗
-   ██║      ██║        ╚████╔╝ ╚██████╔╝╚██████╗██║  ██║██████╔╝
-   ╚═╝      ╚═╝         ╚═══╝   ╚═════╝  ╚═════╝╚═╝  ╚═╝╚═════╝
-
-        S T U D Y   S T U D I O  ×  S N A K E L Y   S T U D I O
+┌──────────────────────────────────────────────┐
+│              Gemini Sidecar Studio           │
+├──────────────────────────────────────────────┤
+│                                              │
+│  Gemini Web                                  │
+│       │                                      │
+│       ▼                                      │
+│  WebEngine / Browser Layer                   │
+│       │                                      │
+│       ▼                                      │
+│  DOM / Page Interaction                      │
+│       │                                      │
+│       ▼                                      │
+│  Code Intelligence Engine                   │
+│       │                                      │
+│       ├── Code Extraction                    │
+│       ├── Target Detection                   │
+│       ├── File Mapping                       │
+│       └── Project Analysis                   │
+│                                              │
+│       ▼                                      │
+│  Project Architect                           │
+│       │                                      │
+│       ├── Project Explorer                   │
+│       ├── Staging                            │
+│       ├── File Writing                       │
+│       └── Project Memory                     │
+│                                              │
+└──────────────────────────────────────────────┘
 ```
 
-### 🎬 → 🧠 → 🕹️ → 📱
+---
 
-# YT Vocab Study Studio & Snakely Studio
+# ✨ Features
 
-**YouTube'dan kelimeye, kelimeden oyuna, oyundan cebine.**
+## 🌐 Gemini Web Integration
 
-Uçtan uca, oyunlaştırılmış ve modüler bir dil öğrenme ekosistemi.
+Proje, Gemini Web arayüzünü masaüstü uygulaması içerisinde çalıştırmak için Qt WebEngine tabanlı bir yapı kullanır.
 
-[![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge\&logo=python\&logoColor=white)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-Gunicorn-000000?style=for-the-badge\&logo=flask\&logoColor=white)](https://flask.palletsprojects.com/)
-[![PyQt6](https://img.shields.io/badge/PyQt6-Desktop-41CD52?style=for-the-badge\&logo=qt\&logoColor=white)](https://www.qt.io/)
-[![Azure](https://img.shields.io/badge/Azure-Linux%20VM-0078D4?style=for-the-badge\&logo=microsoftazure\&logoColor=white)](https://azure.microsoft.com/)
-[![Nginx](https://img.shields.io/badge/Nginx-Reverse%20Proxy-009639?style=for-the-badge\&logo=nginx\&logoColor=white)](https://nginx.org/)
-[![PWA](https://img.shields.io/badge/PWA-Installable-5A0FC8?style=for-the-badge\&logo=pwa\&logoColor=white)](#)
-[![WebGL](https://img.shields.io/badge/WebGL-WASM-990000?style=for-the-badge\&logo=webgl\&logoColor=white)](#)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](#-lisans)
-
-</div>
+Bu sayede Gemini ile yapılan etkileşimler, masaüstü tarafındaki proje araçlarıyla birlikte kullanılabilir.
 
 ---
 
-## 📖 İçindekiler
+## 🔍 Code Intelligence Engine
 
-* [Proje Hakkında](#-proje-hakkında)
-* [Felsefe](#-projenin-felsefesi)
-* [Temel Özellikler](#-temel-özellikler)
-* [Sistem Mimarisi](#️-sistem-mimarisi)
-* [Teknik Yığın](#️-teknik-yığın)
-* [Proje Dizin Yapısı](#-proje-dizin-yapısı)
-* [Yerel Kurulum](#-yerel-kurulum)
-* [Azure Dağıtımı](#️-azure-üzerinde-dağıtım)
-* [API ve Rotalar](#-api-ve-rotalar)
-* [Klavye Kısayolları](#️-klavye-kısayolları)
-* [Açık Kaynak](#-açık-kaynak-felsefesi)
-* [Lisans](#-lisans)
-* [Katkıda Bulunma](#-katkıda-bulunma)
-
----
-
-# 🌍 Proje Hakkında
-
-**YT Vocab Study Studio & Snakely Studio**, gerçek dünyadaki içerikleri interaktif bir dil öğrenme deneyimine dönüştürmek amacıyla geliştirilmiş modüler bir eğitim platformudur.
-
-Temel fikir basittir:
-
-> **İzle → Keşfet → Öğren → Tekrar Et → Oyna → Hatırla**
-
-Platform; YouTube altyazıları, kitaplar ve serbest metinlerden kelime ve kelime öbekleri çıkarabilir. Bu içerikler daha sonra flashcard sistemleri, SRS tabanlı tekrar mekanikleri, testler ve oyunlaştırılmış öğrenme modülleri içerisinde kullanılabilir.
-
-Proje aynı zamanda masaüstü geliştirme araçları ve web tabanlı öğrenme deneyimlerini aynı ekosistem içerisinde birleştirmeyi hedefler.
-
----
-
-# 💡 Projenin Felsefesi
-
-Bu projenin en önemli amacı yalnızca çalışan bir uygulama oluşturmak değil, **başkalarının da üzerine inşa edebileceği bir temel oluşturmak**.
-
-Bu nedenle proje mümkün olduğunca modüler, okunabilir ve geliştirilebilir şekilde tasarlanmıştır.
-
-Kodları inceleyebilir, değiştirebilir, kendi projenize uyarlayabilir, yeni özellikler ekleyebilir, farklı bir arayüz oluşturabilir veya projeyi tamamen farklı bir yöne taşıyabilirsiniz.
-
-**Projeyi olduğu gibi kullanmak zorunda değilsiniz.**
-
-Fork'layın.
-
-Değiştirin.
-
-Parçalarını başka projelerde kullanın.
-
-Yeni oyunlar ekleyin.
-
-Yeni öğrenme algoritmaları geliştirin.
-
-Kendi eğitim platformunuzu oluşturun.
-
-Bu projenin geleceğini yalnızca orijinal geliştiricinin değil, **onu kullanan ve geliştiren herkesin şekillendirmesi** amaçlanmaktadır.
-
----
-
-# 🧠 Temel Özellikler
-
-## 🎬 Video & Metin Madenciliği
-
-* YouTube altyazılarından otomatik transkript çıkarma
-* Kelime ve kelime öbeği frekans analizi
-* Phrasal verb tespiti
-* Öğrenilebilirlik odaklı kelime seçimi
-* Kitap ve uzun metin desteği
-* Otomatik metin sayfalama
-* Kelime üzerine anlık çeviri
-* Web Speech API ile telaffuz
-
----
-
-## 🧠 Quizlet Studio
-
-Çeşitli öğrenme yöntemlerini tek bir çalışma alanında birleştirir.
-
-| Mod           | Açıklama                                     |
-| ------------- | -------------------------------------------- |
-| 🃏 Flashcards | 3D kart çevirme ve sesli telaffuz            |
-| 👉 Swipe      | Bilinen/bilinmeyen kelimeleri hızlıca ayırma |
-| 🧠 Learn      | Aşamalı öğrenme sistemi                      |
-| 📝 Test       | Çoktan seçmeli ve klavye tabanlı test        |
-| 🔗 Match      | Terim ve anlam eşleştirme                    |
-| 🔊 TTS        | Sesli kelime ve cümle desteği                |
-| 🔀 Shuffle    | Rastgele çalışma sıralaması                  |
-
----
-
-# 🕹️ Oyunlaştırma Laboratuvarı
-
-Öğrenmeyi yalnızca kart ve testlerden ibaret bırakmak yerine oyun mekanikleriyle birleştirmeyi amaçlar.
-
-### ⛏️ Vocab Miner
-
-WebGL/WASM tabanlı oyunlaştırılmış kelime öğrenme deneyimi.
-
-Kelime bilgisi oyun dünyasının içerisine entegre edilir.
-
-### 🕹️ Retro Arcade
-
-Retro oyun deneyimini kelime doğrulama mekanikleriyle birleştiren deneysel öğrenme alanı.
-
-### 🎲 Mini Games
-
-Canvas tabanlı çeşitli mini oyunlar ve deneysel öğrenme mekanikleri.
-
-### 🐍 Snakely Studio
-
-Seviye tabanlı, oyunlaştırılmış kelime öğrenme sistemi.
-
-* A1 → C1 seviye yapısı
-* Can/kalp sistemi
-* Sandık mekaniği
-* Streak sistemi
-* SRS entegrasyonu
-* Zorluk eğrisi
-* Seviye bazlı ilerleme
-
----
-
-# 🖥️ Project Architect Studio
-
-Projede ayrıca PyQt6 tabanlı bir masaüstü yardımcı uygulaması bulunmaktadır.
-
-**Project Architect Studio**, kod üretim süreçlerinden elde edilen dosyaları otomatik olarak ayrıştırmak, hedef dosyalarını belirlemek ve proje içerisine yazmak amacıyla tasarlanmıştır.
+`extractor_engine.py`, web içerisindeki kod içeriklerini analiz etmek ve anlamlandırmak için çeşitli çıkarım mekanizmaları içerir.
 
 Sistem:
 
-* Kod bloklarını DOM içerisinden tespit edebilir
-* Dosya isimlerini otomatik algılayabilir
-* Kod dilini analiz edebilir
-* Hedef dosya yolunu tahmin edebilir
-* Dosyaları staging alanında gösterebilir
-* Kodları doğrudan diske yazabilir
-* Yapılan değişiklikler için undo geçmişi tutabilir
-* Proje mimarisini çıkarabilir
-* Proje dosyalarını bir "memory" çıktısı halinde panoya aktarabilir
+* Kod bloklarını tespit etmeye,
+* Dosya isimlerini belirlemeye,
+* Proje yapısını anlamaya,
+* Hedef dosyaları eşleştirmeye,
+* Kod içeriklerini staging sürecine aktarmaya
 
-Extractor motoru; özel dosya direktifleri, Markdown code fence'leri, DOM metadata'sı ve içerik tabanlı heuristic analiz kullanır.
+çalışır.
 
-Masaüstü tarafında ise PyQt6 ve opsiyonel Qt WebEngine kullanılarak Gemini Web arayüzü, staging alanı, dosya gezgini, kod editörü ve proje yönetim ekranları bir araya getirilmiştir.
+Bu yapı özellikle daha gelişmiş otomatik proje yönetimi sistemleri için bir temel olarak kullanılabilir.
 
 ---
 
-# 🏗️ Sistem Mimarisi
+## 🏗️ Project Architect
 
-```mermaid
-flowchart TD
+`gemini_sidecar.py`, projenin masaüstü tarafındaki ana mimarisini oluşturur.
 
-    A["📺 YouTube"] --> B["🐍 Flask Backend"]
-    C["📚 Kitap / Metin"] --> B
+Project Architect yaklaşımı ile amaç yalnızca Gemini ile konuşmak değil, ortaya çıkan kodun gerçek bir proje yapısına dönüştürülmesini kolaylaştırmaktır.
 
-    B --> D["🗄️ Kelime Havuzu"]
+Bunun içerisinde:
 
-    D --> E["🌐 Web UI"]
+* Project Explorer
+* Dosya yönetimi
+* Kod staging
+* Dosyaya yazma
+* Proje ağacı oluşturma
+* Proje hafızası
+* Kod çıkarma
+* Web içerik analizi
 
-    E --> F["🧠 Quizlet Studio"]
-    E --> G["🕹️ Game Lab"]
-    E --> H["🐍 Snakely"]
-
-    E --> I["📱 PWA"]
-
-    I --> J["📷 QR Sync"]
-
-    K["🖥️ Project Architect Studio"] --> L["📂 Project Files"]
-
-    L --> M["Code Extraction Engine"]
-    M --> L
-```
+gibi bileşenler bulunur.
 
 ---
 
-# 🛠️ Teknik Yığın
+## 📂 Project Explorer
 
-| Katman         | Teknolojiler                               |
-| -------------- | ------------------------------------------ |
-| Backend        | Python 3.12 · Flask · Gunicorn             |
-| Desktop        | Python · PyQt6 · Qt WebEngine              |
-| Frontend       | HTML5 · CSS3 · Vanilla JavaScript          |
-| Learning       | SRS · TTS · Web Speech API                 |
-| Games          | Canvas · WebGL · WASM                      |
-| PWA            | Service Worker · LocalStorage              |
-| Infrastructure | Azure Linux VM · Ubuntu · Nginx · Systemd  |
-| Utilities      | QRCode.js · Html5-Qrcode · Chart.js        |
-| Extraction     | DOM Inspector · Regex · Heuristic Analysis |
+Projelerin dosya yapısını masaüstü üzerinden görüntülemek ve yönetmek için kullanılan bir explorer yapısı bulunur.
+
+Bu yapı daha sonra:
+
+* IDE özellikleri,
+* Git entegrasyonu,
+* Diff görüntüleme,
+* Dosya karşılaştırma,
+* Proje arama,
+* Otomatik refactoring
+
+gibi özelliklerle geliştirilebilir.
 
 ---
 
-# 📂 Proje Dizin Yapısı
+## 🧩 Code Extraction
+
+Gemini tarafından oluşturulan veya web sayfasında bulunan kodların algılanması ve proje içerisinde kullanılabilecek hale getirilmesi projenin temel fikirlerinden biridir.
+
+Örneğin:
 
 ```text
-yt-vocab-study-studio/
-│
-├── app.py
-├── wsgi.py
-├── requirements.txt
-├── .env.example
-├── README.md
-│
-├── core/
-│   ├── transcript_miner.py
-│   ├── book_parser.py
-│   ├── srs_engine.py
-│   └── distractor_engine.py
-│
-├── routes/
-│   ├── api_transcript.py
-│   ├── api_vocab.py
-│   ├── mobile_routes.py
-│   └── snakely_routes.py
-│
-├── static/
-│   ├── css/
-│   ├── js/
-│   │   ├── quizlet/
-│   │   ├── games/
-│   │   ├── vocab-miner/
-│   │   ├── arcade/
-│   │   ├── snakely/
-│   │   └── qr-sync.js
-│   │
-│   └── assets/
-│
-├── templates/
-│   ├── index.html
-│   ├── reader.html
-│   ├── mobile/
-│   └── snakely/
-│
-├── deploy/
-│   ├── nginx.conf
-│   └── yt-vocab.service
-│
-└── desktop/
-    ├── gemini_sidecar.py
-    └── extractor_engine.py
+Gemini Response
+      │
+      ▼
+Code Detection
+      │
+      ▼
+Filename Detection
+      │
+      ▼
+Target Resolution
+      │
+      ▼
+Staging
+      │
+      ▼
+Project Files
 ```
+
+Bu sistemin çok daha ileri seviyeye taşınması mümkündür.
 
 ---
 
-# 💻 Yerel Kurulum
+# 🛠️ Technology
 
-## Gereksinimler
+Proje temel olarak şu teknolojiler üzerine kuruludur:
 
-* Python 3.12+
-* pip
-* venv
-* Git
-* Opsiyonel: Node.js
-* Desktop Studio için PyQt6
-* WebEngine özellikleri için PyQt6-WebEngine
+* Python
+* PyQt6
+* Qt WebEngine
+* JavaScript
+* HTML
+* CSS
+* Gemini Web
+* Regex / Text Analysis
+* File System APIs
 
-## Kurulum
+---
+
+# 📁 Project Structure
+
+```text
+gemini-sidecar-studio/
+│
+├── gemini_sidecar.py
+│
+├── extractor_engine.py
+│
+├── .gitignore
+│
+└── README.md
+```
+
+### `gemini_sidecar.py`
+
+Masaüstü uygulamasının ana tarafıdır.
+
+WebEngine, Gemini Web entegrasyonu, Project Architect, proje yönetimi ve dosya işlemleri gibi bölümleri barındırır.
+
+### `extractor_engine.py`
+
+Kod çıkarma ve hedef çözümleme işlemlerinden sorumlu olan intelligence katmanıdır.
+
+---
+
+# ⚙️ Getting Started
+
+## Requirements
+
+Python 3.x ve gerekli Python paketleri.
+
+Projeyi klonlayın:
 
 ```bash
-git clone https://github.com/<kullanici-adi>/yt-vocab-study-studio.git
+git clone https://github.com/MuhammedCanCeylan/gemini-sidecar-studio.git
+cd gemini-sidecar-studio
+```
 
-cd yt-vocab-study-studio
+Gerekli paketleri yükleyin:
 
-python3 -m venv venv
-
-source venv/bin/activate
-
-# Windows:
-# venv\Scripts\activate
-
-pip install -r requirements.txt
+```bash
+pip install PyQt6 PyQt6-WebEngine
 ```
 
 Ardından:
 
 ```bash
-cp .env.example .env
-```
-
-`.env` dosyasını kendi ortamınıza göre düzenleyin.
-
-Uygulamayı çalıştırmak için:
-
-```bash
-flask run --debug
-```
-
-veya:
-
-```bash
-python app.py
-```
-
-Varsayılan geliştirme adresi:
-
-```text
-http://127.0.0.1:5000
-```
-
----
-
-# 🖥️ Project Architect Studio
-
-Desktop Studio'yu çalıştırmak için:
-
-```bash
 python gemini_sidecar.py
 ```
 
-WebEngine desteği gerekiyorsa:
+---
 
-```bash
-pip install PyQt6-WebEngine
-```
+# 🧪 Experimental Project
 
-Uygulama içerisindeki temel akış:
+Bu repository'nin önemli bir özelliği, **tamamlanmış bir ürün olma iddiasında bulunmamasıdır.**
+
+Bazı sistemler deneysel olabilir.
+
+Bazı özellikler geliştirilmeye ihtiyaç duyabilir.
+
+Bazı mimari kararlar ileride tamamen değiştirilebilir.
+
+Bu bilinçli bir tercihtir.
+
+Çünkü bu repository'nin amacı yalnızca mevcut kodu korumak değil, **yeni fikirlerin üzerine inşa edilebileceği bir alan oluşturmak**tır.
+
+---
+
+# 🤝 Build Something Better
+
+Bu projeyi kullanıyorsanız, mevcut yapıya bağlı kalmak zorunda değilsiniz.
+
+Kodun herhangi bir bölümünü:
 
 ```text
-Gemini Web
-     ↓
-DOM Inspector
-     ↓
-Code Extraction Engine
-     ↓
-Staging
-     ↓
-Dosya Hedefleme
-     ↓
-Disk
-     ↓
-Project Explorer
+anla
+ ↓
+değiştir
+ ↓
+geliştir
+ ↓
+yeniden tasarla
+ ↓
+kendi fikrini ekle
 ```
 
-Extractor tarafında kod blokları için dosya adı; DOM metadata'sı, kod başındaki direktifler, başlıklar, yakın metin ve içerik sentaksı gibi birden fazla sinyal kullanılarak belirlenebilir.
+şeklinde ele alabilirsiniz.
+
+Bir özelliği tamamen silmek istiyorsanız silebilirsiniz.
+
+Bir sistemi baştan yazmak istiyorsanız yazabilirsiniz.
+
+Daha iyi bir mimari fikriniz varsa mevcut mimariyi değiştirebilirsiniz.
+
+Projeyi başka bir teknolojiye taşımak istiyorsanız taşıyabilirsiniz.
+
+**Bu repository'nin değeri, olduğu haliyle kalmasından değil, insanların onu alıp daha ileri götürmesinden gelir.**
 
 ---
 
-# ☁️ Azure Üzerinde Dağıtım
+# 🌱 A Starting Point
 
-Örnek üretim mimarisi:
+Gemini Sidecar Studio'yu bir **final product** olarak değil, bir **starting point** olarak düşünün.
 
-```text
-Internet
-   │
-   ▼
-Nginx
-   │
-   ▼
-Gunicorn
-   │
-   ▼
-Flask
-   │
-   ▼
-YT Vocab Study Studio
-```
+Belki buradaki fikirleri kullanarak daha iyi bir IDE yapacaksınız.
 
-Ubuntu üzerinde temel paketler:
+Belki Gemini için tamamen farklı bir desktop environment geliştireceksiniz.
 
-```bash
-sudo apt update
-sudo apt upgrade -y
+Belki sadece `extractor_engine.py` içerisindeki fikirleri alıp başka bir projede kullanacaksınız.
 
-sudo apt install -y \
-    python3.12 \
-    python3.12-venv \
-    python3-pip \
-    nginx \
-    git
-```
+Belki de bu repository'yi fork'layıp bambaşka bir projeye dönüştüreceksiniz.
 
-Virtual environment:
-
-```bash
-python3.12 -m venv venv
-
-source venv/bin/activate
-
-pip install -r requirements.txt
-pip install gunicorn
-```
-
-Gunicorn:
-
-```bash
-gunicorn \
-    --workers 3 \
-    --bind 0.0.0.0:8000 \
-    wsgi:app
-```
-
-Üretim ortamında Nginx reverse proxy ve Systemd ile servis olarak çalıştırılması önerilir.
+Hepsi bu projenin amaçladığı kullanım şekilleridir.
 
 ---
 
-# 🔌 API ve Rotalar
+# ❤️ Use It. Change It. Build On It.
 
-| Method | Route                 | Açıklama                   |
-| ------ | --------------------- | -------------------------- |
-| `GET`  | `/`                   | Ana panel                  |
-| `POST` | `/api/transcript`     | YouTube transkript analizi |
-| `GET`  | `/api/vocab`          | Kelime havuzu              |
-| `POST` | `/api/vocab/add`      | Kelime ekleme              |
-| `GET`  | `/reader`             | Smart Reader               |
-| `GET`  | `/quizlet/<mode>`     | Öğrenme modları            |
-| `GET`  | `/miner`              | Vocab Miner                |
-| `GET`  | `/arcade`             | Retro Arcade               |
-| `GET`  | `/snakely`            | Snakely Studio             |
-| `GET`  | `/snakely/level/<id>` | Seviye başlatma            |
-| `GET`  | `/m`                  | Mobil PWA                  |
-| `GET`  | `/m/qr-sync`          | QR Sync                    |
-| `GET`  | `/manifest.json`      | PWA manifest               |
+Bu repository üzerinde **hak iddia eden kapalı bir ürün anlayışı oluşturmak istemiyorum.**
 
----
+Bu kodu bir başlangıç noktası olarak paylaşıyorum.
 
-# ⌨️ Klavye Kısayolları
+**İstediğiniz gibi kullanın.
+Değiştirin.
+Geliştirin.
+Fork'layın.
+Kendi projelerinize uyarlayın.
+Üzerine yeni şeyler inşa edin.**
 
-| Tuş        | İşlev                    |
-| ---------- | ------------------------ |
-| `Space`    | Kartı çevir / Play-Pause |
-| `←` / `→`  | Önceki / Sonraki         |
-| `↑` / `↓`  | Biliyorum / Bilmiyorum   |
-| `Enter`    | Cevabı onayla            |
-| `Ctrl + Z` | Undo                     |
-| `S`        | Shuffle                  |
-| `M`        | Mute                     |
-| `Esc`      | Ana menü                 |
-| `Q`        | QR Sync                  |
+Projeyi daha iyi hale getirirseniz harika.
+
+Tamamen farklı bir şeye dönüştürürseniz de harika.
+
+Buradaki fikirlerden ilham alıp kendi sisteminizi geliştirirseniz, bu repository'nin amacına ulaşmış demektir.
+
+> **Don't just use the project. Build on it.**
 
 ---
 
-# 👐 Açık Kaynak Felsefesi
+# 📌 Final Note
 
-Bu repository'nin amacı bir yazılımı kapalı bir kutu haline getirmek değildir.
+Bu proje bir son nokta değildir.
 
-Tam tersine:
+**Bir başlangıç noktasıdır.**
 
-**Koddan öğrenmenizi istiyoruz.**
+Kod burada duruyor.
 
-**Kodu değiştirmenizi istiyoruz.**
+Sıradaki adım size ait.
 
-**Projeyi fork'lamanızı istiyoruz.**
-
-**Hataları düzeltmenizi istiyoruz.**
-
-**Yeni özellikler geliştirmenizi istiyoruz.**
-
-**Kendi projelerinizi bunun üzerine kurmanızı istiyoruz.**
-
-Bu projeyi yalnızca "kullanıcı" olarak görmek zorunda değilsiniz.
-
-İsterseniz:
-
-* Kendi dil öğrenme sisteminizi oluşturabilirsiniz.
-* Kendi SRS algoritmanızı yazabilirsiniz.
-* Yeni oyunlar ekleyebilirsiniz.
-* Arayüzü tamamen değiştirebilirsiniz.
-* Backend'i başka bir teknolojiye taşıyabilirsiniz.
-* Projenin yalnızca belirli bir modülünü alabilirsiniz.
-* Kodun bir kısmını başka bir projede kullanabilirsiniz.
-* Ticari bir ürün oluşturabilirsiniz.
-* Projeyi eğitim amacıyla kullanabilirsiniz.
-* Fork oluşturup kendi versiyonunuzu sürdürebilirsiniz.
-
-**Kısacası: Projeyi alın ve onunla bir şeyler inşa edin.**
+**Take it. Break it. Improve it. Rebuild it.**
 
 ---
 
-# 🤝 Katkıda Bulunma
-
-Pull request'ler, issue'lar, hata raporları, fikirler ve yeni özellikler memnuniyetle karşılanır.
-
-Katkıda bulunmak için:
-
-```bash
-git clone https://github.com/<kullanici-adi>/yt-vocab-study-studio.git
-
-cd yt-vocab-study-studio
-
-git checkout -b feature/yeni-ozellik
-```
-
-Değişikliklerinizi yaptıktan sonra:
-
-```bash
-git add .
-
-git commit -m "feat: yeni öğrenme modu eklendi"
-
-git push origin feature/yeni-ozellik
-```
-
-Ardından bir Pull Request oluşturabilirsiniz.
-
----
-
-# 📜 Lisans
-
-Bu proje **MIT License** altında dağıtılmaktadır.
-
-MIT lisansı kapsamında bu yazılımı:
-
-* Kullanabilir,
-* Kopyalayabilir,
-* Değiştirebilir,
-* Birleştirebilir,
-* Dağıtabilir,
-* Alt lisanslayabilir,
-* Ticari amaçlarla kullanabilir,
-* Kendi projelerinizin parçası haline getirebilirsiniz.
-
-Projeyi kendi ihtiyaçlarınıza göre değiştirmekte özgürsünüz.
-
-Ancak yazılım **olduğu gibi**, herhangi bir garanti olmaksızın sunulmaktadır.
-
-Detaylar için repository içerisindeki `LICENSE` dosyasına bakınız.
-
-> **Not:** Repository'ye gerçekten MIT lisansı eklemek istiyorsanız, yalnızca README'yi değiştirmek yeterli değildir. Kök dizine ayrıca `LICENSE` dosyası eklenmelidir.
-
----
-
-# ⚠️ Üçüncü Taraf İçerikler
-
-Bu repository içerisindeki bazı özellikler veya entegrasyonlar üçüncü taraf servisler, kütüphaneler, oyun motorları veya içerik sağlayıcılarıyla birlikte çalışabilir.
-
-Bu bileşenlerin kendi lisansları, kullanım koşulları ve telif hakları olabilir.
-
-Bu nedenle:
-
-> **Bu repository'nin MIT lisansı, üçüncü taraf servislerin veya içeriklerin lisanslarını değiştirmez.**
-
-Özellikle YouTube içerikleri, oyun motorları, üçüncü taraf Web Player sistemleri ve harici servisleri kullanırken ilgili servislerin kendi kullanım koşullarını kontrol etmeniz gerekir.
-
----
-
-# ❤️ Son Söz
-
-Bu proje bir son ürün olmaktan çok, üzerine yeni şeyler inşa edilebilecek bir başlangıç noktası olarak görülmektedir.
-
-Eğer kodun herhangi bir bölümünü faydalı bulduysanız kullanın.
-
-Bir şeyi daha iyi yapabiliyorsanız değiştirin.
-
-Eksik bir şey varsa ekleyin.
-
-Hatalı bir şey varsa düzeltin.
-
-Daha iyi bir fikir bulduysanız uygulayın.
-
-**Fork'layın. Build edin. Break edin. Fix edin. Ship edin.**
-
-Ve mümkünse sizden sonra gelen geliştiricinin işini biraz daha kolaylaştırın.
-
----
-
-<div align="center">
-
-### 🧠 Learn.
-
-### 🕹️ Play.
-
-### 🛠️ Build.
-
-### 🚀 Share.
-
-**YT Vocab Study Studio × Snakely Studio**
-
-Made with 🧠 + ☕ + Python + JavaScript
-
-</div>
+<p align="center">
+  <b>Gemini Sidecar Studio</b><br>
+  A starting point for the next idea.
+</p>
